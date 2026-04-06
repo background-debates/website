@@ -3,7 +3,7 @@
 
 <footer class="mt-auto border-t border-slate-200 bg-slate-50 py-12 text-slate-900">
 	<div class="container mx-auto px-4 sm:px-6">
-		<div class="grid gap-12 md:grid-cols-4">
+		<div class="grid gap-12 md:grid-cols-5">
 			<div class="col-span-2">
 				<a href="/" class="text-2xl font-bold tracking-tighter text-slate-900"> BACKGROUND </a>
 				<p class="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">
@@ -12,7 +12,9 @@
 			</div>
 
 			<div>
-				<h3 class="text-sm font-semibold tracking-wider text-slate-900 uppercase">Rechtliches</h3>
+				<h3 class="text-sm font-semibold tracking-wider text-slate-900 uppercase">
+					Rechtliches - Website
+				</h3>
 				<ul class="mt-4 space-y-2">
 					<li>
 						<a
@@ -29,6 +31,27 @@
 					<li>
 						<a href="/agb" class="text-sm text-slate-600 transition-colors hover:text-blue-600"
 							>AGB</a
+						>
+					</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3 class="text-sm font-semibold tracking-wider text-slate-900 uppercase">
+					Rechtliches - App
+				</h3>
+				<ul class="mt-4 space-y-2">
+					<li>
+						<a
+							href="/terms-and-conditions/"
+							class="text-sm text-slate-600 transition-colors hover:text-blue-600"
+							>Terms and Conditions</a
+						>
+					</li>
+					<li>
+						<a
+							href="/privacy-policy-app/"
+							class="text-sm text-slate-600 transition-colors hover:text-blue-600">Datenschutz</a
 						>
 					</li>
 				</ul>
@@ -60,7 +83,7 @@
 
 		<div class="mt-12 flex items-center justify-between border-t border-slate-200 pt-8">
 			<p class="text-xs text-slate-500">
-				&copy; {new Date().getFullYear()} Background App. Alle Rechte vorbehalten.
+				&copy; {new Date().getFullYear()} Background by Fulton & Bock GbR. Alle Rechte vorbehalten.
 			</p>
 		</div>
 	</div>
