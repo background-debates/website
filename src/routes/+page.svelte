@@ -1,15 +1,16 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import peopleTalking from '$lib/assets/people_talking.png';
 	import heroIllustration from '$lib/assets/Erste-seite-Foto-Background.png';
+	import appStoreLogo from '$lib/assets/app-store/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg';
+	import playStoreLogo from '$lib/assets/app-store/GetItOnGooglePlay_Badge_Web_color_English.svg';
 
 	const features = [
 		{
 			title: 'Diskutiere über das, was dir wichtig ist.',
 			description:
-				'Folge Akteuren aus Politik, Gesellschaft, Wissenschaft und mehr – sei es aus deiner Stadt, deinem Land oder weltweit. Jeder Creator-Account stellt täglich maximal eine Debatte an die Community.',
+				'Folge Akteuren aus Politik, Gesellschaft, Wissenschaft und mehr – sei es aus deiner Stadt, deinem Land oder weltweit. Jeder Creator-Account stellt täglich maximal eine Debatte an die Community. So sorgen wir für Qualität statt Quantität.',
 			icon: '💬',
 			color: 'bg-blue-100 text-blue-600'
 		},
@@ -23,14 +24,14 @@
 		{
 			title: 'Platze deine Filterblase.',
 			description:
-				'Filterblasen sind schwer zu erkennen – bis sie aufeinandertreffen. Wir vernetzen dich anonym in einen 1-zu-1-Chat und lassen deine Filterblase platzen.',
+				'Wie kann hier jemand anderer Meinung sein?! Filterblasen sind schwer zu erkennen – bis sie aufeinandertreffen. Wir vernetzen dich anonym in einen 1-zu-1-Chat und lassen deine Filterblase platzen. Gib Feedback zu deinen Chats und sorge damit dafür, dass du immer mit Menschen verbunden wirst, die ernsthaft diskutieren möchten.',
 			icon: '🫧',
 			color: 'bg-slate-100 text-slate-600'
 		},
 		{
 			title: 'Eine neue Art zu diskutieren.',
 			description:
-				'Wir weisen euch auf tief liegende Auslöser von Konflikten hin. Mit diesem Wissen könnt ihr dann besser und produktiver in den Meinungsaustausch treten.',
+				'Meinungsverschiedenheiten sind Alltag, aber häufig schwierig zu überwinden. Du möchtest zum Beispiel über das Thema Erbschaftssteuer diskutieren, aber dein Gegenüber findet die Ungleichheit gar nicht zu groß? Wir weisen euch auf solche tief liegenden Auslöser von Konflikten hin. Mit diesem Wissen könnt ihr dann besser und produktiver in den Meinungsaustausch treten.',
 			icon: '💡',
 			color: 'bg-blue-50 text-blue-500'
 		}
@@ -40,12 +41,12 @@
 <div class="flex min-h-screen flex-col bg-white text-slate-900 selection:bg-blue-100">
 	<Header />
 
-	<main class="flex-grow">
+	<main class="grow">
 		<!-- Hero Section -->
 		<section class="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32">
 			<div class="container mx-auto px-4 sm:px-6">
 				<div class="flex flex-col items-center gap-12 lg:flex-row">
-					<div class="flex-1 max-w-2xl">
+					<div class="max-w-2xl flex-1 text-center lg:text-left">
 						<h2
 							class="animate-in fade-in slide-in-from-bottom-4 mb-4 font-semibold tracking-wide text-blue-600 uppercase duration-700"
 						>
@@ -62,28 +63,31 @@
 							Diskutiere auf einem neuen Niveau, ohne Populismus und Filterblasen. Nutze moderne
 							KI-Technologie für produktivere Gespräche.
 						</p>
+
 						<div
-							class="animate-in fade-in slide-in-from-bottom-10 flex flex-wrap gap-4 duration-1000"
+							class="animate-in fade-in slide-in-from-bottom-10 flex flex-wrap justify-center gap-6 duration-1000 lg:justify-start"
 						>
 							<a
-								href={resolve('/signup')}
-								class="rounded-full bg-blue-600 px-8 py-4 text-lg font-bold text-white transition-all hover:scale-105 hover:bg-blue-700 active:scale-95"
+								href="https://apps.apple.com/de/app/background/id6474905103"
+								class="transition-transform hover:scale-105 active:scale-95"
+								aria-label="Download on the App Store"
 							>
-								Jetzt mitmachen
+								<img src={appStoreLogo} alt="App Store" class="h-20 w-auto" />
 							</a>
 							<a
-								href={resolve('/app')}
-								class="rounded-full border border-slate-200 bg-white px-8 py-4 text-lg font-bold text-slate-900 transition-all hover:bg-slate-50"
+								href="https://play.google.com/store/apps/details?id=com.background.background"
+								class="transition-transform hover:scale-105 active:scale-95"
+								aria-label="Get it on Google Play"
 							>
-								Mehr erfahren
+								<img src={playStoreLogo} alt="Google Play" class="h-20 w-auto" />
 							</a>
 						</div>
 					</div>
-					<div class="flex-1 animate-in fade-in zoom-in duration-1000">
+					<div class="animate-in fade-in zoom-in flex-1 duration-1000">
 						<img
 							src={heroIllustration}
 							alt="Background App Illustration"
-							class="w-full max-w-xl mx-auto"
+							class="mx-auto w-full max-w-xl"
 						/>
 					</div>
 				</div>
@@ -124,10 +128,10 @@
 		<section class="py-24">
 			<div class="container mx-auto px-4 sm:px-6">
 				<div class="flex flex-col items-center gap-16 lg:flex-row">
-					<div class="flex-1 order-2 lg:order-1">
-						<img src={peopleTalking} alt="People talking" class="w-full max-w-lg mx-auto" />
+					<div class="order-2 flex-1 lg:order-1">
+						<img src={peopleTalking} alt="People talking" class="mx-auto w-full max-w-lg" />
 					</div>
-					<div class="flex-1 order-1 lg:order-2 max-w-2xl">
+					<div class="order-1 max-w-2xl flex-1 lg:order-2">
 						<h2 class="mb-8 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
 							Ein Team. Eine Vision.
 						</h2>
@@ -145,15 +149,15 @@
 		<section class="border-y border-blue-100 bg-blue-50 py-16">
 			<div class="container mx-auto px-4 sm:px-6">
 				<div class="flex flex-col items-center justify-between gap-8 md:flex-row">
-					<div class="max-w-2xl">
+					<div class="max-w-2xl text-center md:text-left">
 						<h3 class="mb-2 text-2xl font-bold text-slate-900">Deine Daten bleiben sicher.</h3>
 						<p class="text-slate-600">
-							Wir respektieren deine Privatsphäre. Deine Daten werden verschlüsselt und niemals an
+							Wir respektieren deine Privatsphäre. Deine Daten bleiben sicher und werden nicht an
 							Dritte weitergegeben. Anonyme 1-zu-1-Chats schützen deine Identität.
 						</p>
 					</div>
 					<a
-						href={resolve('/datenschutz')}
+						href="/datenschutz"
 						class="font-semibold whitespace-nowrap text-blue-600 hover:underline"
 					>
 						Erfahre mehr über Datenschutz →

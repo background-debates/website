@@ -1,5 +1,5 @@
 Impressum
-Angaben gemäß § 5 TMG 
+Angaben gemäß § 5 TMG
 
 Background by Fulton & Bock GbR
 Josefstraße 192

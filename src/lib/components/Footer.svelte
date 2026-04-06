@@ -1,14 +1,11 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
 </script>
 
 <footer class="mt-auto border-t border-slate-200 bg-slate-50 py-12 text-slate-900">
 	<div class="container mx-auto px-4 sm:px-6">
 		<div class="grid gap-12 md:grid-cols-4">
 			<div class="col-span-2">
-				<a href={resolve('/')} class="text-2xl font-bold tracking-tighter text-slate-900">
-					BACKGROUND
-				</a>
+				<a href="/" class="text-2xl font-bold tracking-tighter text-slate-900"> BACKGROUND </a>
 				<p class="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">
 					Level up your dialog. Diskutiere auf einem neuen Niveau, ohne Populismus und Filterblasen.
 				</p>
@@ -19,20 +16,19 @@
 				<ul class="mt-4 space-y-2">
 					<li>
 						<a
-							href={resolve('/impressum')}
+							href="/impressum"
 							class="text-sm text-slate-600 transition-colors hover:text-blue-600">Impressum</a
 						>
 					</li>
 					<li>
 						<a
-							href={resolve('/datenschutz')}
+							href="/datenschutz"
 							class="text-sm text-slate-600 transition-colors hover:text-blue-600">Datenschutz</a
 						>
 					</li>
 					<li>
-						<a
-							href={resolve('/agb')}
-							class="text-sm text-slate-600 transition-colors hover:text-blue-600">AGB</a
+						<a href="/agb" class="text-sm text-slate-600 transition-colors hover:text-blue-600"
+							>AGB</a
 						>
 					</li>
 				</ul>
