@@ -5,6 +5,13 @@
 	import heroIllustration from '$lib/assets/Erste-seite-Foto-Background.png';
 	import appStoreLogo from '$lib/assets/app-store/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg';
 	import playStoreLogo from '$lib/assets/app-store/GetItOnGooglePlay_Badge_Web_color_English.svg';
+	import { goto } from '$app/navigation';
+
+	// Supporter Logos
+	import enactusLogo from '$lib/assets/supporter/EnactusAachen_weiß_gelb2.png';
+	import rwthInnoLogo from '$lib/assets/supporter/rwth-inno.svg';
+	import klausTschiraLogo from '$lib/assets/supporter/KlausTschira.svg';
+	import msfLogo from '$lib/assets/supporter/MSF.png';
 
 	const features = [
 		{
@@ -35,6 +42,13 @@
 			icon: '💡',
 			color: 'bg-blue-50 text-blue-500'
 		}
+	];
+
+	const supporters = [
+		{ name: 'Enactus Aachen', logo: enactusLogo, url: 'https://www.enactusaachen.de/background' },
+		{ name: 'Klaus Tschira Stiftung', logo: klausTschiraLogo, url: 'https://klaus-tschira-stiftung.de' },
+		{ name: 'Media Service Forschungsstiftung', logo: msfLogo, url: 'https://www.media-lab.de/de/startups-experts/startups/background/' },
+		{ name: 'RWTH Innovation', logo: rwthInnoLogo, url: 'https://www.rwth-innovation.de/en/' }
 	];
 </script>
 
@@ -90,6 +104,22 @@
 							class="mx-auto w-full max-w-xl"
 						/>
 					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Supporter Section -->
+		<section class="border-y border-slate-100 bg-slate-50/50 py-12">
+			<div class="container mx-auto px-4 sm:px-6">
+				<p class="mb-10 text-center text-sm font-semibold tracking-widest text-slate-400 uppercase">
+					Unterstützt durch
+				</p>
+				<div class="flex flex-wrap items-center justify-center gap-12 grayscale opacity-60 transition-all hover:grayscale-0 hover:opacity-100 md:gap-20">
+					{#each supporters as supporter (supporter.name)}
+						<a href={supporter.url} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center">
+							<img src={supporter.logo} alt={supporter.name} class="h-12 w-auto object-contain md:h-16" title={supporter.name} />
+						</a>
+					{/each}
 				</div>
 			</div>
 		</section>
