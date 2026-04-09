@@ -11,35 +11,39 @@
 	import rwthInnoLogo from '$lib/assets/supporter/rwth-inno.svg';
 	import klausTschiraLogo from '$lib/assets/supporter/KlausTschira.svg';
 	import msfLogo from '$lib/assets/supporter/MSF.png';
+	import tileImage1 from '$lib/assets/tiles/Gemini_Generated_Image_.png';
+	import tileImage2 from '$lib/assets/tiles/Gemini_Generated_Image_(1).png';
+	import tileImage3 from '$lib/assets/tiles/Gemini_Generated_Image_(2).png';
+	import tileImage4 from '$lib/assets/tiles/Gemini_Generated_Image_(3).png';
 
 	const features = [
 		{
 			title: 'Diskutiere über das, was dir wichtig ist.',
 			description:
 				'Folge Akteuren aus Politik, Gesellschaft, Wissenschaft und mehr – sei es aus deiner Stadt, deinem Land oder weltweit. Jeder Creator-Account stellt täglich maximal eine Debatte an die Community. So sorgen wir für Qualität statt Quantität.',
-			icon: '💬',
-			color: 'bg-blue-100 text-blue-600'
+			image: tileImage3,
+			imageAlt: 'Illustration zu Debatten und Austausch'
 		},
 		{
 			title: 'Mehr als nur kontroverse Themen.',
 			description:
 				'Neben Debatten zu aktuellen Themen stellen wir auch allgemeine Fragen zu deinem Welt- und Menschenbild. Diese Informationen helfen uns, dein Diskussionserlebnis nachhaltig zu verbessern.',
-			icon: '🌍',
-			color: 'bg-green-100 text-green-600'
+			image: tileImage2,
+			imageAlt: 'Illustration zu Perspektiven und Weltbild'
 		},
 		{
 			title: 'Platze deine Filterblase.',
 			description:
 				'Wie kann hier jemand anderer Meinung sein?! Filterblasen sind schwer zu erkennen – bis sie aufeinandertreffen. Wir vernetzen dich anonym in einen 1-zu-1-Chat und lassen deine Filterblase platzen. Gib Feedback zu deinen Chats und sorge damit dafür, dass du immer mit Menschen verbunden wirst, die ernsthaft diskutieren möchten.',
-			icon: '🫧',
-			color: 'bg-slate-100 text-slate-600'
+			image: tileImage4,
+			imageAlt: 'Illustration zum Verlassen der Filterblase'
 		},
 		{
 			title: 'Eine neue Art zu diskutieren.',
 			description:
 				'Meinungsverschiedenheiten sind Alltag, aber häufig schwierig zu überwinden. Du möchtest zum Beispiel über das Thema Erbschaftssteuer diskutieren, aber dein Gegenüber findet die Ungleichheit gar nicht zu groß? Wir weisen euch auf solche tief liegenden Auslöser von Konflikten hin. Mit diesem Wissen könnt ihr dann besser und produktiver in den Meinungsaustausch treten.',
-			icon: '💡',
-			color: 'bg-blue-50 text-blue-500'
+			image: tileImage1,
+			imageAlt: 'Illustration für produktiven Dialog'
 		}
 	];
 
@@ -156,10 +160,18 @@
 						<div
 							class="group rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:border-blue-300 hover:shadow-xl"
 						>
-							<div
-								class="mb-6 flex h-16 w-16 items-center justify-center rounded-xl text-4xl transition-transform duration-300 group-hover:scale-110 {feature.color}"
-							>
-								{feature.icon}
+							<div class="relative mb-6 overflow-hidden rounded-xl bg-white">
+								<img
+									src={feature.image}
+									alt={feature.imageAlt}
+									class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+								/>
+								<div
+									class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-linear-to-r from-white to-transparent"
+								></div>
+								<div
+									class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-white to-transparent"
+								></div>
 							</div>
 							<h3 class="mb-4 text-2xl font-bold text-slate-900">
 								{feature.title}
@@ -206,7 +218,7 @@
 						</p>
 					</div>
 					<a
-						href="/datenschutz"
+						href="/terms-and-conditions"
 						class="font-semibold whitespace-nowrap text-blue-600 hover:underline"
 					>
 						Erfahre mehr über Datenschutz →

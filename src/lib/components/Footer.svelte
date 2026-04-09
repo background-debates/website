@@ -69,12 +69,22 @@
 					</li>
 					<li>
 						<a
-							href="https://linkedin.com"
+							href="https://www.linkedin.com/company/background-app"
 							target="_blank"
 							rel="noopener noreferrer"
 							class="text-sm text-slate-600 transition-colors hover:text-blue-600"
 						>
 							LinkedIn
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://www.instagram.com/app.background/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-sm text-slate-600 transition-colors hover:text-blue-600"
+						>
+							Instagram
 						</a>
 					</li>
 				</ul>
