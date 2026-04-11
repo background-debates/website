@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import peopleTalking from '$lib/assets/people_talking.png';
-	import heroIllustration from '$lib/assets/Erste-seite-Foto-Background.png';
+	import peopleTalking from '$lib/assets/people_talking.svg';
+	import heroIllustration from '$lib/assets/Erste-seite-Foto-Background.svg';
 	import appStoreLogo from '$lib/assets/app-store/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg';
 	import playStoreLogo from '$lib/assets/app-store/GetItOnGooglePlay_Badge_Web_color_English.svg';
 
@@ -15,6 +15,7 @@
 	import tileImage2 from '$lib/assets/tiles/Gemini_Generated_Image_(1).png';
 	import tileImage3 from '$lib/assets/tiles/Gemini_Generated_Image_(2).png';
 	import tileImage4 from '$lib/assets/tiles/Gemini_Generated_Image_(3).png';
+	import { resolve } from '$app/paths';
 
 	const features = [
 		{
@@ -61,7 +62,48 @@
 		},
 		{ name: 'RWTH Innovation', logo: rwthInnoLogo, url: 'https://www.rwth-innovation.de/en/' }
 	];
+
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'Organization',
+		name: 'Background',
+		url: 'https://background-app.de',
+		logo: 'https://background-app.de/favicon.svg',
+		description:
+			'Diskutiere auf einem neuen Niveau, ohne Populismus und Filterblasen. Nutze moderne KI-Technologie für produktivere Gespräche.',
+		sameAs: [
+			// add social media links here if available
+		]
+	};
+
+	const webSiteJsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		name: 'Background',
+		url: 'https://background-app.de',
+		potentialAction: {
+			'@type': 'SearchAction',
+			target: 'https://background-app.de/search?q={search_term_string}',
+			'query-input': 'required name=search_term_string'
+		}
+	};
+
+	const jsonLdScript =
+		`<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, '\\u003c')}` +
+		`</` +
+		`script>`;
+	const webSiteJsonLdScript =
+		`<script type="application/ld+json">${JSON.stringify(webSiteJsonLd).replace(/</g, '\\u003c')}` +
+		`</` +
+		`script>`;
 </script>
+
+<svelte:head>
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+	{@html jsonLdScript}
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+	{@html webSiteJsonLdScript}
+</svelte:head>
 
 <div class="flex min-h-screen flex-col bg-white text-slate-900 selection:bg-blue-100">
 	<Header />
@@ -129,12 +171,14 @@
 					class="flex flex-wrap items-center justify-center gap-12 opacity-60 grayscale transition-all hover:opacity-100 hover:grayscale-0 md:gap-20"
 				>
 					{#each supporters as supporter (supporter.name)}
+						<!-- eslint-disable svelte/no-navigation-without-resolve -->
 						<a
 							href={supporter.url}
 							target="_blank"
 							rel="noopener noreferrer"
 							class="flex items-center justify-center"
 						>
+							<!-- eslint-enable svelte/no-navigation-without-resolve -->
 							<img
 								src={supporter.logo}
 								alt={supporter.name}
@@ -218,7 +262,7 @@
 						</p>
 					</div>
 					<a
-						href="/terms-and-conditions"
+						href={resolve('/terms-and-conditions')}
 						class="font-semibold whitespace-nowrap text-blue-600 hover:underline"
 					>
 						Erfahre mehr über Datenschutz →

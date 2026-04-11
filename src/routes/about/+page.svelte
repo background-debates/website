@@ -5,10 +5,6 @@
 	import seboImg from '$lib/assets/about-us/sebo.jpg';
 </script>
 
-<svelte:head>
-	<title>Über uns | Background</title>
-</svelte:head>
-
 <div class="flex min-h-screen flex-col bg-white text-slate-900 selection:bg-blue-100">
 	<Header active="about" />
 
