@@ -8,7 +8,11 @@
 	const faqs: { question: string; answer: Snippet }[] = [
 		{ question: 'Wie kann ich meinen Account löschen?', answer: deleteAccount },
 		{ question: 'Welche Daten werden gespeichert und warum?', answer: dataStored },
-		{ question: 'Wie finde ich Freunde in der App?', answer: findFriends }
+		{ question: 'Wie funktioniert die Ende-zu-Ende Verschlüsselung?', answer: encryptionDetails },
+		{ question: 'Wie finde ich Freunde in der App?', answer: findFriends },
+		{ question: 'Wie funktioniert das anonyme Matching?', answer: anonymityMatching },
+		{ question: 'Welche Rolle spielt KI in der App?', answer: aiGemini },
+		{ question: 'Was sind "Creator" und wie folge ich ihnen?', answer: creatorsInfo }
 	];
 
 	function toggle(index: number) {
@@ -24,7 +28,7 @@
 				name: 'Wie kann ich meinen Account löschen?',
 				acceptedAnswer: {
 					'@type': 'Answer',
-					text: 'Du kannst deinen Account innerhalb der Background-App unter Profil > Einstellungen (drei Punkte) > Account löschen entfernen. Die vollständige Löschung kann bis zu 90 Tage dauern.'
+					text: 'Du kannst deinen Account innerhalb der Background-App unter Profil > Einstellungen > Account löschen entfernen. Die vollständige Löschung dauert bis zu 90 Tage.'
 				}
 			},
 			{
@@ -32,15 +36,15 @@
 				name: 'Welche Daten werden gespeichert und warum?',
 				acceptedAnswer: {
 					'@type': 'Answer',
-					text: 'Wir speichern Abstimmungsverhalten für das KI-Matching, anonymisierte Metadaten zur Erfolgsmessung, Crash-Logs zur Fehlerbehebung und Telefonnummer-Hashes für die Kontaktsynchronisierung.'
+					text: 'Wir speichern Abstimmungsverhalten für das KI-Matching, E2E-verschlüsselte Nachrichten (temporär), anonymisierte Metadaten und Telefonnummer-Hashes.'
 				}
 			},
 			{
 				'@type': 'Question',
-				name: 'Wie finde ich Freunde in der App?',
+				name: 'Ist meine Kommunikation privat?',
 				acceptedAnswer: {
 					'@type': 'Answer',
-					text: 'Gehe zum Tab Profil > Kontakte, um jemanden einzuladen. Dein Gegenüber muss die Einladung annehmen, bevor ihr interagieren könnt.'
+					text: 'Ja, wir nutzen RSA 2048-bit Ende-zu-Ende Verschlüsselung. Nur Sender und Empfänger können Nachrichten lesen.'
 				}
 			}
 		]
@@ -60,102 +64,108 @@
 {#snippet deleteAccount()}
 	<p class="mb-4">
 		Du kannst deinen Account nur innerhalb der Background-App löschen. Diese Aktion ist
-		unwiderruflich, auch wenn sie versehentlich erfolgt.
+		unwiderruflich.
 	</p>
 	<p class="mb-2 font-semibold">So löschst du deinen Account:</p>
 	<ol class="mb-4 ml-6 list-decimal space-y-1">
 		<li>Öffne die Background-App.</li>
-		<li>Klicke auf dein Profil-Icon.</li>
-		<li>Klicke auf die drei Punkte in der oberen rechten Ecke.</li>
-		<li>Klicke auf "Account löschen".</li>
-		<li>Bestätige, dass du deinen Account löschen möchtest.</li>
+		<li>Gehe zu deinem Profil.</li>
+		<li>Öffne die Einstellungen (drei Punkte oben rechts).</li>
+		<li>Wähle "Account löschen" und bestätige den Vorgang.</li>
 	</ol>
-	<p class="mb-2 font-semibold">Was passiert, wenn du deinen Account löschst:</p>
+	<p class="mb-2 font-semibold">Wichtige Hinweise:</p>
 	<ul class="ml-6 list-disc space-y-1 text-slate-600">
-		<li>Du verlierst sofort den Zugriff auf deinen Account.</li>
-		<li>
-			Die vollständige Löschung deiner Daten kann bis zu 90 Tage dauern. Während dieser Zeit sind
-			deine Informationen nicht verfügbar.
-		</li>
-		<li>
-			Informationen zu von dir erstellten Gruppen oder Nachrichten, die andere Nutzer über dich
-			haben, bleiben bestehen.
-		</li>
-		<li>
-			Nachrichten und Abstimmungsverhalten, die bereits auf den Geräten deiner Kontakte geladen
-			sind, werden nicht sofort gelöscht.
-		</li>
+		<li>Sofortiger Verlust des Account-Zugriffs.</li>
+		<li>Vollständige Datenlöschung innerhalb von 90 Tagen.</li>
+		<li>Bereits auf Endgeräten von Kontakten gespeicherte Nachrichten bleiben dort erhalten.</li>
 	</ul>
 {/snippet}
 
 {#snippet dataStored()}
 	<p class="mb-4">
-		Unser Ziel ist es, so wenig Daten wie möglich zu speichern und gleichzeitig eine gute
-		Nutzererfahrung zu bieten.
+		Wir minimieren die Datenspeicherung auf das notwendige Minimum für die Funktionalität.
 	</p>
 	<div class="overflow-x-auto rounded-xl border border-slate-200">
 		<table class="w-full text-left text-sm">
 			<thead class="bg-slate-50 text-slate-900">
 				<tr>
 					<th class="px-4 py-3 font-semibold">Datentyp</th>
-					<th class="px-4 py-3 font-semibold">Grund für die Speicherung</th>
+					<th class="px-4 py-3 font-semibold">Zweck</th>
 				</tr>
 			</thead>
 			<tbody class="divide-y divide-slate-200 text-slate-600">
 				<tr>
-					<td class="px-4 py-3 font-medium text-slate-900">Abstimmungsverhalten</td>
-					<td class="px-4 py-3">
-						Vergangene Abstimmungen werden gespeichert, um die für das User-Matching erforderliche
-						KI zu trainieren und zu verbessern.
-					</td>
+					<td class="px-4 py-3 font-medium text-slate-900">Abstimmungen</td>
+					<td class="px-4 py-3">Training der KI für präziseres User-Matching.</td>
 				</tr>
 				<tr>
 					<td class="px-4 py-3 font-medium text-slate-900">Metadaten</td>
-					<td class="px-4 py-3">
-						Daten wie Account-Erstellung und letzte Online-Zeit werden verwendet, um die
-						Effektivität von Kampagnen zu messen. Dies erfolgt aggregiert und anonymisiert.
-					</td>
-				</tr>
-				<tr>
-					<td class="px-4 py-3 font-medium text-slate-900">Google Crashalytics</td>
-					<td class="px-4 py-3">
-						Wird zur Auswertung von Crash-Logs und zur Behebung technischer Probleme verwendet, um
-						die App zu verbessern.
-					</td>
+					<td class="px-4 py-3">Anonymisierte Analyse zur Verbesserung der App-Erfahrung.</td>
 				</tr>
 				<tr>
 					<td class="px-4 py-3 font-medium text-slate-900">Nachrichten</td>
-					<td class="px-4 py-3">
-						Nachrichten werden gelöscht, sobald sie vom Empfänger geladen wurden. Sie sind derzeit
-						nicht Ende-zu-Ende (E2E) verschlüsselt, woran jedoch gearbeitet wird.
-					</td>
+					<td class="px-4 py-3">E2E-verschlüsselt; Löschung nach Zustellung an den Empfänger.</td>
 				</tr>
 				<tr>
 					<td class="px-4 py-3 font-medium text-slate-900">Kontakte</td>
-					<td class="px-4 py-3">
-						Telefonnummern werden als Hashes (SHA-256) gespeichert, um dich zu benachrichtigen, wenn
-						ein Kontakt der App beitritt, wobei die Daten sicher und anonym bleiben.
-					</td>
+					<td class="px-4 py-3">SHA-256 Hashes zur sicheren Identifizierung von Kontakten.</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 {/snippet}
 
-{#snippet findFriends()}
+{#snippet encryptionDetails()}
 	<p class="mb-4">
-		Um die Antworten deiner Freunde in der App zu sehen, musst du sie zuerst hinzufügen:
+		Deine Privatsphäre ist technisch garantiert. Background App nutzt eine echte **Ende-zu-Ende (E2E) Verschlüsselung**.
 	</p>
 	<ul class="ml-6 list-disc space-y-2 text-slate-600">
-		<li>
-			Gehe zum Tab <strong>Profil</strong> und dann auf <strong>"Kontakte"</strong>, um jemanden
-			einzuladen.
-		</li>
-		<li>
-			Dein Freund muss die Einladung annehmen, bevor ihr interagieren oder die Antworten des anderen
-			sehen könnt.
-		</li>
-		<li>Du kannst Freunde jederzeit im selben Tab "Kontakte" wieder entfernen.</li>
+		<li><strong>RSA 2048-bit:</strong> Beim ersten Start generiert dein Gerät ein individuelles Schlüsselpaar.</li>
+		<li><strong>Privater Schlüssel:</strong> Dieser verlässt niemals dein Handy.</li>
+		<li><strong>Sicherheit:</strong> Niemand außer dir und deinem Chatpartner kann die Inhalte lesen – auch wir als Betreiber nicht.</li>
+	</ul>
+{/snippet}
+
+{#snippet findFriends()}
+	<p class="mb-4">
+		Du kannst Freunde sicher über Einladungen hinzufügen:
+	</p>
+	<ul class="ml-6 list-disc space-y-2 text-slate-600">
+		<li>Navigiere zu <strong>Profil > Kontakte</strong>.</li>
+		<li>Erstelle einen Einladungs-Link (Token) und teile ihn mit Freunden.</li>
+		<li>Nach Annahme der Einladung könnt ihr die Antworten des jeweils anderen sehen.</li>
+	</ul>
+{/snippet}
+
+{#snippet anonymityMatching()}
+	<p class="mb-4">
+		Das Herzstück der App ist das anonyme Diskussions-Matching:
+	</p>
+	<ul class="ml-6 list-disc space-y-2 text-slate-600">
+		<li>Du wirst basierend auf deiner Meinung zu spezifischen Fragen gematcht.</li>
+		<li>Dein Profil bleibt für den Gegenüber komplett anonym.</li>
+		<li>Dies ermöglicht einen ehrlichen Austausch ohne Vorurteile.</li>
+	</ul>
+{/snippet}
+
+{#snippet aiGemini()}
+	<p class="mb-4">
+		Wir setzen modernste KI-Technologie ein, um den Dialog zu bereichern:
+	</p>
+	<ul class="ml-6 list-disc space-y-2 text-slate-600">
+		<li><strong>Google Gemini 2.0 Flash:</strong> Unsere KI analysiert komplexe Fragen und schlägt relevante Diskussionsthemen vor.</li>
+		<li><strong>Argumentationshilfe:</strong> Die KI kann Pro- und Contra-Argumente generieren, um dir zu helfen, eine fundierte Meinung zu bilden oder andere Sichtweisen zu verstehen.</li>
+	</ul>
+{/snippet}
+
+{#snippet creatorsInfo()}
+	<p class="mb-4">
+		Creators sind Nutzer, die aktiv zur Community beitragen:
+	</p>
+	<ul class="ml-6 list-disc space-y-2 text-slate-600">
+		<li>Jeder Nutzer kann zum Creator werden und eigene Fragen veröffentlichen.</li>
+		<li>Du kannst Creatoren folgen, um sofort über neue Fragen und Diskussionsthemen informiert zu werden.</li>
+		<li>In deinem Feed siehst du priorisiert die Inhalte der Creatoren, denen du folgst.</li>
 	</ul>
 {/snippet}
 
@@ -170,7 +180,7 @@
 						Häufig gestellte Fragen
 					</h1>
 					<p class="text-lg text-slate-600">
-						Hier findest du Antworten auf die am häufigsten gestellten Fragen zur Background-App.
+						Hier findest du Antworten auf technische Details und Funktionen der Background-App.
 					</p>
 				</div>
 

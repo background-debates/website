@@ -44,11 +44,11 @@
 							<div
 								class="relative h-48 w-48 overflow-hidden rounded-full ring-4 ring-slate-50 transition-transform group-hover:scale-105"
 							>
-								<img src={lawImg} alt="Lawrence Fulton" class="h-full w-full object-cover" />
+								<img src={lawImg} alt="Lawrence" class="h-full w-full object-cover" />
 							</div>
 						</div>
 						<div class="text-center">
-							<h3 class="mb-1 text-2xl font-bold text-slate-900">Lawrence Fulton</h3>
+							<h3 class="mb-1 text-2xl font-bold text-slate-900">Lawrence</h3>
 							<p class="mb-4 font-medium text-blue-600">Co-Founder & Software Lead</p>
 							<p class="mb-6 leading-relaxed text-slate-600">
 								Lawrence hat Artificial Intelligence an der University of Groningen (B.Sc.) und
@@ -71,11 +71,11 @@
 							<div
 								class="relative h-48 w-48 overflow-hidden rounded-full ring-4 ring-slate-50 transition-transform group-hover:scale-105"
 							>
-								<img src={seboImg} alt="Sebastian Bock" class="h-full w-full object-cover" />
+								<img src={seboImg} alt="Sebastian" class="h-full w-full object-cover" />
 							</div>
 						</div>
 						<div class="text-center">
-							<h3 class="mb-1 text-2xl font-bold text-slate-900">Sebastian Bock</h3>
+							<h3 class="mb-1 text-2xl font-bold text-slate-900">Sebastian</h3>
 							<p class="mb-4 font-medium text-blue-600">Co-Founder & Product</p>
 							<p class="mb-6 leading-relaxed text-slate-600">
 								Sebastian hat Philosophie und Sinologie an der Universität Heidelberg (B.A.) sowie
