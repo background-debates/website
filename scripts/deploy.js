@@ -15,10 +15,10 @@ if (!host || !remoteDir) {
 }
 
 const normalizedTarget = '/' + remoteDir.replace(/^\/+|\/+$/g, '');
-if (normalizedTarget === '/' || !normalizedTarget.includes('/', 1)) {
+if (normalizedTarget === '/') {
 	console.error(
-		`Refusing to deploy to suspicious path "${normalizedTarget}". ` +
-			`Target must be a nested directory (e.g. web/svelte-app), never the FTP root.`
+		`Refusing to deploy to FTP root "${normalizedTarget}". ` +
+			`DOMAIN must specify a target directory (e.g. host:/svelte-app).`
 	);
 	process.exit(1);
 }
