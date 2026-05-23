@@ -14,14 +14,6 @@ if (!host || !remoteDir) {
 	process.exit(1);
 }
 
-const normalizedTarget = '/' + remoteDir.replace(/^\/+|\/+$/g, '');
-if (normalizedTarget === '/') {
-	console.error(
-		`Refusing to deploy to FTP root "${normalizedTarget}". ` +
-			`DOMAIN must specify a target directory (e.g. host:/svelte-app).`
-	);
-	process.exit(1);
-}
 
 const client = new Client();
 client.ftp.verbose = false;
