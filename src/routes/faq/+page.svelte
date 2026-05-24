@@ -133,7 +133,7 @@
 	<ul class="ml-6 list-disc space-y-2 text-slate-600">
 		<li>Navigiere zu <strong>Profil > Kontakte</strong>.</li>
 		<li>Hier kannst du dich direkt mit deinen Kontakten befreunden.</li>
-		<li>Oder einen Einladungs-Link (Token) erstellen und ihn mit Freunden teilen.</li>
+		<li>Alternativ kannst du einen Einladungs-Link (Token) erstellen und ihn mit Freunden teilen.</li>
 		<li>Nach Annahme der Einladung könnt ihr die Antworten des jeweils anderen sehen.</li>
 	</ul>
 {/snippet}
