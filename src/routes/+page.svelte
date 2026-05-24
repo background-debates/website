@@ -7,14 +7,14 @@
 	import playStoreLogo from '$lib/assets/app-store/GetItOnGooglePlay_Badge_Web_color_English.svg';
 
 	// Supporter Logos
-	import enactusLogo from '$lib/assets/supporter/EnactusAachen_weiß_gelb2.png';
+	import enactusLogo from '$lib/assets/supporter/EnactusAachen_weiß_gelb2.webp';
 	import rwthInnoLogo from '$lib/assets/supporter/rwth-inno.svg';
 	import klausTschiraLogo from '$lib/assets/supporter/KlausTschira.svg';
-	import msfLogo from '$lib/assets/supporter/MSF.png';
-	import tileImage1 from '$lib/assets/tiles/Gemini_Generated_Image_.png';
-	import tileImage2 from '$lib/assets/tiles/Gemini_Generated_Image_(1).png';
-	import tileImage3 from '$lib/assets/tiles/Gemini_Generated_Image_(2).png';
-	import tileImage4 from '$lib/assets/tiles/Gemini_Generated_Image_(3).png';
+	import msfLogo from '$lib/assets/supporter/MSF.webp';
+	import screenshotCreator from '$lib/assets/screenshots/Picture 1.webp';
+	import screenshotDebate from '$lib/assets/screenshots/Picture 2.webp';
+	import screenshotChat from '$lib/assets/screenshots/Picture 5.webp';
+	import screenshotBackground from '$lib/assets/screenshots/Picture 6.webp';
 	import { resolve } from '$app/paths';
 
 	const features = [
@@ -22,29 +22,33 @@
 			title: 'Diskutiere über das, was dir wichtig ist.',
 			description:
 				'Folge Akteuren aus Politik, Gesellschaft, Wissenschaft und mehr – sei es aus deiner Stadt, deinem Land oder weltweit. Jeder Creator-Account stellt täglich maximal eine Debatte an die Community. So sorgen wir für Qualität statt Quantität.',
-			image: tileImage3,
-			imageAlt: 'Illustration zu Debatten und Austausch'
+			image: screenshotCreator,
+			imageAlt: 'Screenshot der Creator-Übersicht in der Background App',
+			bgGradient: 'bg-gradient-to-br from-blue-50 to-indigo-100/60'
 		},
 		{
 			title: 'Mehr als nur kontroverse Themen.',
 			description:
 				'Neben Debatten zu aktuellen Themen stellen wir auch allgemeine Fragen zu deinem Welt- und Menschenbild. Diese Informationen helfen uns, dein Diskussionserlebnis nachhaltig zu verbessern.',
-			image: tileImage2,
-			imageAlt: 'Illustration zu Perspektiven und Weltbild'
+			image: screenshotDebate,
+			imageAlt: 'Screenshot einer Frage zum Steuersatz auf Erbschaften in der Background App',
+			bgGradient: 'bg-gradient-to-br from-sky-50 to-blue-100/60'
 		},
 		{
 			title: 'Platze deine Filterblase.',
 			description:
 				'Wie kann hier jemand anderer Meinung sein?! Filterblasen sind schwer zu erkennen – bis sie aufeinandertreffen. Wir vernetzen dich anonym in einen 1-zu-1-Chat und lassen deine Filterblase platzen. Gib Feedback zu deinen Chats und sorge damit dafür, dass du immer mit Menschen verbunden wirst, die ernsthaft diskutieren möchten.',
-			image: tileImage4,
-			imageAlt: 'Illustration zum Verlassen der Filterblase'
+			image: screenshotChat,
+			imageAlt: 'Screenshot eines anonymen 1-zu-1-Chats in der Background App',
+			bgGradient: 'bg-gradient-to-br from-indigo-50 to-violet-100/60'
 		},
 		{
 			title: 'Eine neue Art zu diskutieren.',
 			description:
 				'Meinungsverschiedenheiten sind Alltag, aber häufig schwierig zu überwinden. Du möchtest zum Beispiel über das Thema Erbschaftssteuer diskutieren, aber dein Gegenüber findet die Ungleichheit gar nicht zu groß? Wir weisen euch auf solche tief liegenden Auslöser von Konflikten hin. Mit diesem Wissen könnt ihr dann besser und produktiver in den Meinungsaustausch treten.',
-			image: tileImage1,
-			imageAlt: 'Illustration für produktiven Dialog'
+			image: screenshotBackground,
+			imageAlt: 'Screenshot des gemeinsamen Backgrounds und der Prämissen-Vergleichs in der Background App',
+			bgGradient: 'bg-gradient-to-br from-slate-900 to-slate-950'
 		}
 	];
 
@@ -139,14 +143,14 @@
 								class="transition-transform hover:scale-105 active:scale-95"
 								aria-label="Download on the App Store"
 							>
-								<img src={appStoreLogo} alt="App Store" class="h-20 w-auto" />
+								<img src={appStoreLogo} alt="App Store" class="h-20 w-auto" loading="eager" fetchpriority="high" />
 							</a>
 							<a
 								href="https://play.google.com/store/apps/details?id=com.background.background"
 								class="transition-transform hover:scale-105 active:scale-95"
 								aria-label="Get it on Google Play"
 							>
-								<img src={playStoreLogo} alt="Google Play" class="h-20 w-auto" />
+								<img src={playStoreLogo} alt="Google Play" class="h-20 w-auto" loading="eager" fetchpriority="high" />
 							</a>
 						</div>
 					</div>
@@ -155,6 +159,8 @@
 							src={heroIllustration}
 							alt="Background App Illustration"
 							class="mx-auto w-full max-w-xl"
+							loading="eager"
+							fetchpriority="high"
 						/>
 					</div>
 				</div>
@@ -184,6 +190,8 @@
 								alt={supporter.name}
 								class="h-12 w-auto object-contain md:h-16"
 								title={supporter.name}
+								loading="lazy"
+								decoding="async"
 							/>
 						</a>
 					{/each}
@@ -194,35 +202,42 @@
 		<!-- Features Grid -->
 		<section class="bg-slate-50 py-24">
 			<div class="container mx-auto px-4 sm:px-6">
-				<div class="mb-16 text-center">
-					<h2 class="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+				<div class="mb-20 text-center">
+					<h2 class="text-3xl font-bold tracking-tight text-slate-900 md:text-5xl">
 						Warum Background?
 					</h2>
 				</div>
-				<div class="grid gap-8 md:grid-cols-2">
-					{#each features as feature (feature.title)}
+				<div class="flex flex-col gap-24 lg:gap-32">
+					{#each features as feature, i (feature.title)}
 						<div
-							class="group rounded-2xl border border-slate-200 bg-white p-8 transition-all hover:border-blue-300 hover:shadow-xl"
+							class="group flex flex-col items-center gap-8 lg:flex-row lg:gap-16 {i % 2 === 1
+								? 'lg:flex-row-reverse'
+								: ''}"
 						>
-							<div class="relative mb-6 overflow-hidden rounded-xl bg-white">
-								<img
-									src={feature.image}
-									alt={feature.imageAlt}
-									class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-								/>
+							<!-- Image Container -->
+							<div class="w-full flex-1 max-w-lg lg:max-w-none">
 								<div
-									class="pointer-events-none absolute inset-y-0 left-0 w-16 bg-linear-to-r from-white to-transparent"
-								></div>
-								<div
-									class="pointer-events-none absolute inset-y-0 right-0 w-16 bg-linear-to-l from-white to-transparent"
-								></div>
+									class="relative flex h-[480px] w-full items-center justify-center overflow-hidden rounded-3xl p-8 shadow-sm transition-all duration-300 hover:shadow-md {feature.bgGradient}"
+								>
+									<img
+										src={feature.image}
+										alt={feature.imageAlt}
+										class="h-full w-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2"
+										loading="lazy"
+										decoding="async"
+									/>
+								</div>
 							</div>
-							<h3 class="mb-4 text-2xl font-bold text-slate-900">
-								{feature.title}
-							</h3>
-							<p class="leading-relaxed text-slate-600">
-								{feature.description}
-							</p>
+
+							<!-- Text Content -->
+							<div class="flex-grow flex-1 text-center lg:text-left">
+								<h3 class="mb-4 text-3xl font-bold tracking-tight text-slate-900 lg:text-4xl">
+									{feature.title}
+								</h3>
+								<p class="text-lg leading-relaxed text-slate-600 lg:text-xl">
+									{feature.description}
+								</p>
+							</div>
 						</div>
 					{/each}
 				</div>
@@ -234,7 +249,7 @@
 			<div class="container mx-auto px-4 sm:px-6">
 				<div class="flex flex-col items-center gap-16 lg:flex-row">
 					<div class="order-2 flex-1 lg:order-1">
-						<img src={peopleTalking} alt="People talking" class="mx-auto w-full max-w-lg" />
+						<img src={peopleTalking} alt="People talking" class="mx-auto w-full max-w-lg" loading="lazy" decoding="async" />
 					</div>
 					<div class="order-1 max-w-2xl flex-1 lg:order-2">
 						<h2 class="mb-8 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
