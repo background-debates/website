@@ -128,12 +128,13 @@
 
 {#snippet findFriends()}
 	<p class="mb-4">
-		Du kannst Freunde über Einladungen hinzufügen:
+		Du kannst Freunde direkt in der App oder über Einladungen hinzufügen:
 	</p>
 	<ul class="ml-6 list-disc space-y-2 text-slate-600">
 		<li>Navigiere zu <strong>Profil > Kontakte</strong>.</li>
 		<li>Hier kannst du dich direkt mit deinen Kontakten befreunden.</li>
 		<li>Alternativ kannst du einen Einladungs-Link (Token) erstellen und ihn mit Freunden teilen.</li>
+		<li>So könnt ihr euch befreunden, ohne Zugriff auf eure Handy-Kontakte.</li>
 		<li>Nach Annahme der Einladung könnt ihr die Antworten des jeweils anderen sehen.</li>
 	</ul>
 {/snippet}
