@@ -128,11 +128,13 @@
 
 {#snippet findFriends()}
 	<p class="mb-4">
-		Du kannst Freunde sicher über Einladungen hinzufügen:
+		Du kannst Freunde direkt in der App oder über Einladungen hinzufügen:
 	</p>
 	<ul class="ml-6 list-disc space-y-2 text-slate-600">
 		<li>Navigiere zu <strong>Profil > Kontakte</strong>.</li>
-		<li>Erstelle einen Einladungs-Link (Token) und teile ihn mit Freunden.</li>
+		<li>Hier kannst du dich direkt mit deinen Kontakten befreunden.</li>
+		<li>Alternativ kannst du einen Einladungs-Link (Token) erstellen und ihn mit Freunden teilen.</li>
+		<li>So könnt ihr euch befreunden, ohne Zugriff auf eure Handy-Kontakte.</li>
 		<li>Nach Annahme der Einladung könnt ihr die Antworten des jeweils anderen sehen.</li>
 	</ul>
 {/snippet}
@@ -143,14 +145,14 @@
 	</p>
 	<ul class="ml-6 list-disc space-y-2 text-slate-600">
 		<li>Du wirst basierend auf deiner Meinung zu spezifischen Fragen gematcht.</li>
-		<li>Dein Profil bleibt für den Gegenüber komplett anonym.</li>
+		<li>Dein Profil bleibt für dein Gegenüber komplett anonym.</li>
 		<li>Dies ermöglicht einen ehrlichen Austausch ohne Vorurteile.</li>
 	</ul>
 {/snippet}
 
 {#snippet aiGemini()}
 	<p class="mb-4">
-		Wir setzen modernste KI-Technologie ein, um den Dialog zu bereichern:
+		Wir setzen moderne KI-Technologie ein, um den Dialog zu bereichern:
 	</p>
 	<ul class="ml-6 list-disc space-y-2 text-slate-600">
 		<li><strong>Google Gemini 2.0 Flash:</strong> Unsere KI analysiert komplexe Fragen und schlägt relevante Diskussionsthemen vor.</li>
@@ -160,12 +162,12 @@
 
 {#snippet creatorsInfo()}
 	<p class="mb-4">
-		Creators sind Nutzer, die aktiv zur Community beitragen:
+		Creator sind Nutzer, die aktiv zur Community beitragen:
 	</p>
 	<ul class="ml-6 list-disc space-y-2 text-slate-600">
 		<li>Jeder Nutzer kann zum Creator werden und eigene Fragen veröffentlichen.</li>
-		<li>Du kannst Creatoren folgen, um sofort über neue Fragen und Diskussionsthemen informiert zu werden.</li>
-		<li>In deinem Feed siehst du priorisiert die Inhalte der Creatoren, denen du folgst.</li>
+		<li>Du kannst Creatorn folgen, um sofort über neue Fragen und Diskussionsthemen informiert zu werden.</li>
+		<li>In deinem Feed siehst du priorisiert die Inhalte der Creator, denen du folgst.</li>
 	</ul>
 {/snippet}
 
