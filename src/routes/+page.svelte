@@ -9,7 +9,6 @@
 	// Supporter Logos
 	import enactusLogo from '$lib/assets/supporter/EnactusAachen_weiß_gelb2.webp';
 	import rwthInnoLogo from '$lib/assets/supporter/rwth-inno.svg';
-	import klausTschiraLogo from '$lib/assets/supporter/KlausTschira.svg';
 	import msfLogo from '$lib/assets/supporter/MSF.webp';
 	import screenshotCreator from '$lib/assets/screenshots/Picture 1.webp';
 	import screenshotDebate from '$lib/assets/screenshots/Picture 2.webp';
@@ -54,11 +53,6 @@
 
 	const supporters = [
 		{ name: 'Enactus Aachen', logo: enactusLogo, url: 'https://www.enactusaachen.de/background' },
-		{
-			name: 'Klaus Tschira Stiftung',
-			logo: klausTschiraLogo,
-			url: 'https://klaus-tschira-stiftung.de'
-		},
 		{
 			name: 'Media Service Forschungsstiftung',
 			logo: msfLogo,
@@ -217,7 +211,7 @@
 							<!-- Image Container -->
 							<div class="w-full flex-1 max-w-lg lg:max-w-none">
 								<div
-									class="relative flex h-[480px] w-full items-center justify-center overflow-hidden rounded-3xl p-8 shadow-sm transition-all duration-300 hover:shadow-md {feature.bgGradient}"
+									class="relative flex h-[120] w-full items-center justify-center overflow-hidden rounded-3xl p-8 shadow-sm transition-all duration-300 hover:shadow-md {feature.bgGradient}"
 								>
 									<img
 										src={feature.image}
