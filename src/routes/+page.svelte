@@ -211,7 +211,7 @@
 							<!-- Image Container -->
 							<div class="w-full flex-1 max-w-lg lg:max-w-none">
 								<div
-									class="relative flex h-[120] w-full items-center justify-center overflow-hidden rounded-3xl p-8 shadow-sm transition-all duration-300 hover:shadow-md {feature.bgGradient}"
+									class="relative flex h-[320px] w-full items-center justify-center overflow-hidden rounded-3xl p-8 shadow-sm transition-all duration-300 hover:shadow-md sm:h-[420px] lg:h-[520px] {feature.bgGradient}"
 								>
 									<img
 										src={feature.image}
