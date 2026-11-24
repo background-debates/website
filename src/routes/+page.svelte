@@ -1,19 +1,19 @@
 <script lang="ts">
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import peopleTalking from '$lib/assets/people_talking.svg';
-	import heroIllustration from '$lib/assets/Erste-seite-Foto-Background.svg';
-	import appStoreLogo from '$lib/assets/app-store/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg';
-	import playStoreLogo from '$lib/assets/app-store/GetItOnGooglePlay_Badge_Web_color_English.svg';
+	import Header from '#lib/components/Header.svelte';
+	import Footer from '#lib/components/Footer.svelte';
+	import peopleTalking from '#lib/assets/people_talking.svg';
+	import heroIllustration from '#lib/assets/Erste-seite-Foto-Background.svg';
+	import appStoreLogo from '#lib/assets/app-store/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg';
+	import playStoreLogo from '#lib/assets/app-store/GetItOnGooglePlay_Badge_Web_color_English.svg';
 
 	// Supporter Logos
-	import enactusLogo from '$lib/assets/supporter/EnactusAachen_weiß_gelb2.webp';
-	import rwthInnoLogo from '$lib/assets/supporter/rwth-inno.svg';
-	import msfLogo from '$lib/assets/supporter/MSF.webp';
-	import screenshotCreator from '$lib/assets/screenshots/Picture 1.webp';
-	import screenshotDebate from '$lib/assets/screenshots/Picture 2.webp';
-	import screenshotChat from '$lib/assets/screenshots/Picture 5.webp';
-	import screenshotBackground from '$lib/assets/screenshots/Picture 6.webp';
+	import enactusLogo from '#lib/assets/supporter/EnactusAachen_weiß_gelb2.webp';
+	import rwthInnoLogo from '#lib/assets/supporter/rwth-inno.svg';
+	import msfLogo from '#lib/assets/supporter/MSF.webp';
+	import screenshotCreator from '#lib/assets/screenshots/Picture 1.webp';
+	import screenshotDebate from '#lib/assets/screenshots/Picture 2.webp';
+	import screenshotChat from '#lib/assets/screenshots/Picture 5.webp';
+	import screenshotBackground from '#lib/assets/screenshots/Picture 6.webp';
 	import { resolve } from '$app/paths';
 
 	const features = [
@@ -46,7 +46,8 @@
 			description:
 				'Meinungsverschiedenheiten sind Alltag, aber häufig schwierig zu überwinden. Du möchtest zum Beispiel über das Thema Erbschaftssteuer diskutieren, aber dein Gegenüber findet die Ungleichheit gar nicht zu groß? Wir weisen euch auf solche tief liegenden Auslöser von Konflikten hin. Mit diesem Wissen könnt ihr dann besser und produktiver in den Meinungsaustausch treten.',
 			image: screenshotBackground,
-			imageAlt: 'Screenshot des gemeinsamen Backgrounds und der Prämissen-Vergleichs in der Background App',
+			imageAlt:
+				'Screenshot des gemeinsamen Backgrounds und der Prämissen-Vergleichs in der Background App',
 			bgGradient: 'bg-gradient-to-br from-slate-900 to-slate-950'
 		}
 	];
@@ -137,14 +138,26 @@
 								class="transition-transform hover:scale-105 active:scale-95"
 								aria-label="Download on the App Store"
 							>
-								<img src={appStoreLogo} alt="App Store" class="h-20 w-auto" loading="eager" fetchpriority="high" />
+								<img
+									src={appStoreLogo}
+									alt="App Store"
+									class="h-20 w-auto"
+									loading="eager"
+									fetchpriority="high"
+								/>
 							</a>
 							<a
 								href="https://play.google.com/store/apps/details?id=com.background.background"
 								class="transition-transform hover:scale-105 active:scale-95"
 								aria-label="Get it on Google Play"
 							>
-								<img src={playStoreLogo} alt="Google Play" class="h-20 w-auto" loading="eager" fetchpriority="high" />
+								<img
+									src={playStoreLogo}
+									alt="Google Play"
+									class="h-20 w-auto"
+									loading="eager"
+									fetchpriority="high"
+								/>
 							</a>
 						</div>
 					</div>
@@ -209,14 +222,14 @@
 								: ''}"
 						>
 							<!-- Image Container -->
-							<div class="w-full flex-1 max-w-lg lg:max-w-none">
+							<div class="w-full max-w-lg flex-1 lg:max-w-none">
 								<div
-									class="relative flex h-[320px] w-full items-center justify-center overflow-hidden rounded-3xl p-8 shadow-sm transition-all duration-300 hover:shadow-md sm:h-[420px] lg:h-[520px] {feature.bgGradient}"
+									class="relative flex h-80 w-full items-center justify-center overflow-hidden rounded-3xl p-8 shadow-sm transition-all duration-300 hover:shadow-md sm:h-105 lg:h-130 {feature.bgGradient}"
 								>
 									<img
 										src={feature.image}
 										alt={feature.imageAlt}
-										class="h-full w-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-2"
+										class="h-full w-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-105"
 										loading="lazy"
 										decoding="async"
 									/>
@@ -224,7 +237,7 @@
 							</div>
 
 							<!-- Text Content -->
-							<div class="flex-grow flex-1 text-center lg:text-left">
+							<div class="flex-1 text-center lg:text-left">
 								<h3 class="mb-4 text-3xl font-bold tracking-tight text-slate-900 lg:text-4xl">
 									{feature.title}
 								</h3>
@@ -243,7 +256,13 @@
 			<div class="container mx-auto px-4 sm:px-6">
 				<div class="flex flex-col items-center gap-16 lg:flex-row">
 					<div class="order-2 flex-1 lg:order-1">
-						<img src={peopleTalking} alt="People talking" class="mx-auto w-full max-w-lg" loading="lazy" decoding="async" />
+						<img
+							src={peopleTalking}
+							alt="People talking"
+							class="mx-auto w-full max-w-lg"
+							loading="lazy"
+							decoding="async"
+						/>
 					</div>
 					<div class="order-1 max-w-2xl flex-1 lg:order-2">
 						<h2 class="mb-8 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">

@@ -14,7 +14,6 @@ if (!host || !remoteDir) {
 	process.exit(1);
 }
 
-
 const client = new Client();
 client.ftp.verbose = false;
 

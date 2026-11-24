@@ -1,5 +1,5 @@
 <script lang="ts">
-	import logo from '$lib/assets/Background-svf.svg';
+	import logo from '#lib/assets/Background-svf.svg';
 	import { resolve } from '$app/paths';
 
 	let { active = 'home' } = $props();
