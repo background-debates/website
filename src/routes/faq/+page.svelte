@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
+	import Header from '#lib/components/Header.svelte';
+	import Footer from '#lib/components/Footer.svelte';
 	import type { Snippet } from 'svelte';
 
 	let openIndex = $state<number | null>(null);
@@ -117,32 +117,36 @@
 
 {#snippet encryptionDetails()}
 	<p class="mb-4">
-		Deine Privatsphäre ist technisch garantiert. Background App nutzt eine echte **Ende-zu-Ende (E2E) Verschlüsselung**.
+		Deine Privatsphäre ist technisch garantiert. Background App nutzt eine echte **Ende-zu-Ende
+		(E2E) Verschlüsselung**.
 	</p>
 	<ul class="ml-6 list-disc space-y-2 text-slate-600">
-		<li><strong>RSA 2048-bit:</strong> Beim ersten Start generiert dein Gerät ein individuelles Schlüsselpaar.</li>
+		<li>
+			<strong>RSA 2048-bit:</strong> Beim ersten Start generiert dein Gerät ein individuelles Schlüsselpaar.
+		</li>
 		<li><strong>Privater Schlüssel:</strong> Dieser verlässt niemals dein Handy.</li>
-		<li><strong>Sicherheit:</strong> Niemand außer dir und deinem Chatpartner kann die Inhalte lesen – auch wir als Betreiber nicht.</li>
+		<li>
+			<strong>Sicherheit:</strong> Niemand außer dir und deinem Chatpartner kann die Inhalte lesen – auch
+			wir als Betreiber nicht.
+		</li>
 	</ul>
 {/snippet}
 
 {#snippet findFriends()}
-	<p class="mb-4">
-		Du kannst Freunde direkt in der App oder über Einladungen hinzufügen:
-	</p>
+	<p class="mb-4">Du kannst Freunde direkt in der App oder über Einladungen hinzufügen:</p>
 	<ul class="ml-6 list-disc space-y-2 text-slate-600">
 		<li>Navigiere zu <strong>Profil > Kontakte</strong>.</li>
 		<li>Hier kannst du dich direkt mit deinen Kontakten befreunden.</li>
-		<li>Alternativ kannst du einen Einladungs-Link (Token) erstellen und ihn mit Freunden teilen.</li>
+		<li>
+			Alternativ kannst du einen Einladungs-Link (Token) erstellen und ihn mit Freunden teilen.
+		</li>
 		<li>So könnt ihr euch befreunden, ohne Zugriff auf eure Handy-Kontakte.</li>
 		<li>Nach Annahme der Einladung könnt ihr die Antworten des jeweils anderen sehen.</li>
 	</ul>
 {/snippet}
 
 {#snippet anonymityMatching()}
-	<p class="mb-4">
-		Das Herzstück der App ist das anonyme Diskussions-Matching:
-	</p>
+	<p class="mb-4">Das Herzstück der App ist das anonyme Diskussions-Matching:</p>
 	<ul class="ml-6 list-disc space-y-2 text-slate-600">
 		<li>Du wirst basierend auf deiner Meinung zu spezifischen Fragen gematcht.</li>
 		<li>Dein Profil bleibt für dein Gegenüber komplett anonym.</li>
@@ -151,22 +155,27 @@
 {/snippet}
 
 {#snippet aiGemini()}
-	<p class="mb-4">
-		Wir setzen moderne KI-Technologie ein, um den Dialog zu bereichern:
-	</p>
+	<p class="mb-4">Wir setzen moderne KI-Technologie ein, um den Dialog zu bereichern:</p>
 	<ul class="ml-6 list-disc space-y-2 text-slate-600">
-		<li><strong>Google Gemini 2.0 Flash:</strong> Unsere KI analysiert komplexe Fragen und schlägt relevante Diskussionsthemen vor.</li>
-		<li><strong>Argumentationshilfe:</strong> Die KI kann Pro- und Contra-Argumente generieren, um dir zu helfen, eine fundierte Meinung zu bilden oder andere Sichtweisen zu verstehen.</li>
+		<li>
+			<strong>Google Gemini 2.0 Flash:</strong> Unsere KI analysiert komplexe Fragen und schlägt relevante
+			Diskussionsthemen vor.
+		</li>
+		<li>
+			<strong>Argumentationshilfe:</strong> Die KI kann Pro- und Contra-Argumente generieren, um dir zu
+			helfen, eine fundierte Meinung zu bilden oder andere Sichtweisen zu verstehen.
+		</li>
 	</ul>
 {/snippet}
 
 {#snippet creatorsInfo()}
-	<p class="mb-4">
-		Creator sind Nutzer, die aktiv zur Community beitragen:
-	</p>
+	<p class="mb-4">Creator sind Nutzer, die aktiv zur Community beitragen:</p>
 	<ul class="ml-6 list-disc space-y-2 text-slate-600">
 		<li>Jeder Nutzer kann zum Creator werden und eigene Fragen veröffentlichen.</li>
-		<li>Du kannst Creatorn folgen, um sofort über neue Fragen und Diskussionsthemen informiert zu werden.</li>
+		<li>
+			Du kannst Creatorn folgen, um sofort über neue Fragen und Diskussionsthemen informiert zu
+			werden.
+		</li>
 		<li>In deinem Feed siehst du priorisiert die Inhalte der Creator, denen du folgst.</li>
 	</ul>
 {/snippet}

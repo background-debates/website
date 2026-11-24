@@ -1,7 +1,7 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.ico';
-	import ogImage from '$lib/assets/Erste-seite-Foto-Background.svg';
+	import favicon from '#lib/assets/favicon.ico';
+	import ogImage from '#lib/assets/Erste-seite-Foto-Background.svg';
 	import { page } from '$app/state';
 
 	let { children } = $props();
